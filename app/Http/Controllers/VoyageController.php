@@ -16,8 +16,6 @@ class VoyageController extends Controller
 
     public function postVoyage(Request $request) {
 
-        // dd($request);
-
         $validated = $request->validate([
             'departure_date' => 'required',
             'arrival_date' => 'required',
@@ -28,6 +26,22 @@ class VoyageController extends Controller
 
         $voyages = Voyage::all();
         return back()->with('voyages', $voyages);
+    }
+
+    public function delVoyage($id) {
+        $voyage = Voyage::find($id);
+        if($voyage->etapes->isNotEmpty()){
+            foreach ($voyage->etapes as $etape) {
+                $etape->delete();
+            }
+        }
+        $voyage->delete();
+
+        // session()->flash('status', 'success');
+        // session()->flash('title', 'Suppression');
+        // session()->flash('message', "Le voyage a été supprimé");
+        $voyages = Voyage::all();
+        return back()->with('voyages', $voyages)->with('success','Product successfully added.');
     }
 
     public function addEtape(Request $request) {

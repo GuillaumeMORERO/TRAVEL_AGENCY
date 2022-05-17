@@ -44,12 +44,19 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script>
-            // var schedulerForm = document.forms["scheduler"];
-            // if (schedulerForm.value == null || schedulerForm.value == "") {
-            //     // alert("Please enter> the username. Can’t be blank or empty !!!");
-            //     // return false;
+            // var flashWindow = document.getElementById('bgFlash');
+            // function closeModalFlash() {
+            //     document.getElementById('modalBodyFlash').style.transform = 'scale(0)';
+            //     flashWindow.classList.remove("bg-opacity-60");
+            //     flashWindow.classList.add("bg-opacity-0");
+            //     setTimeout(function() {
+            //         document.getElementById('flashMess').classList.add("hidden");
+            //         flashWindow.classList.add("bg-opacity-60");
+            //         flashWindow.classList.remove("bg-opacity-0");
+            //     }, 300);
             // }
         </script>
+</div>
     </body>
 
 </html>

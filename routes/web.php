@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\VoyageController::class, 'getVoyages'])->name('getVoyages');
 Route::post('/postVoyage', [App\Http\Controllers\VoyageController::class, 'postVoyage'])->name('postVoyage');
+Route::get('/delVoyage/{id}', [App\Http\Controllers\VoyageController::class, 'delVoyage'])->name('delVoyage');
 Route::post('/addEtape', [App\Http\Controllers\VoyageController::class, 'addEtape'])->name('addEtape');
 Route::post('/deleteEtape', [App\Http\Controllers\VoyageController::class, 'deleteEtape'])->name('deleteEtape');
 

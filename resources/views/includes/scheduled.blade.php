@@ -8,6 +8,13 @@
                     {{$voyage->etapes->isEmpty() ? 'Aucune étape !' : 'Voir les étapes'}}
                 </span>
             </h4>
+
+            <div class="my-3 d-flex justify-content-end">
+                <a href="{{route('delVoyage', $voyage->id)}}">
+                    <button type="button" class="btn btn-danger">Supprimer ce voyage</button>
+                </a>
+            </div>
+
             <p class="mb-0"> 
                 <span class="font_size10">Départ : </span> {{$voyage->serializeDate($voyage->departure_date)}} / 
                 <span class="font_size10">Arrivée : </span> {{$voyage->serializeDate($voyage->arrival_date)}}
@@ -17,7 +24,6 @@
             @else
                 @include('includes.listeEtape')
             @endif
-
 
         </div>
     @endforeach
