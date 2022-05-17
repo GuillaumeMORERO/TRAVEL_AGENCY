@@ -16,19 +16,23 @@ class VoyageController extends Controller
 
     public function postVoyage(Request $request) {
 
+        // manque verification de l'auth
+
+        // vérification de la présence des champs obligatoires
         $validated = $request->validate([
             'departure_date' => 'required',
             'arrival_date' => 'required',
         ]);
-
+        // création du nouveau voyage
         $voyage = new Voyage($request->all());
         $voyage->save();
-
+        // retour de la vue
         $voyages = Voyage::all();
         return back()->with('voyages', $voyages);
     }
 
     public function delVoyage($id) {
+        // manque vérification du auth, et présence effective du voyage
         $voyage = Voyage::find($id);
         if($voyage->etapes->isNotEmpty()){
             foreach ($voyage->etapes as $etape) {
@@ -45,6 +49,7 @@ class VoyageController extends Controller
     }
 
     public function addEtape(Request $request) {
+        // vérification des champs obligatoires et des types
         $validated = $request->validate([
             'type' => 'required|string',
             'transport_number' => 'required|string',
@@ -56,6 +61,7 @@ class VoyageController extends Controller
             'arrival_date' => 'nullable|string',
         ]);
         $voyage = Voyage::find($request->voyageId);
+        // ici il faudrait vérifier si le voyage existe 
         $order = $voyage->etapes->isEmpty() ? 1 : count($voyage->etapes) +1;
         $newEtape = new Etape([
             'voyage_id'        => $request->voyageId,
@@ -77,6 +83,7 @@ class VoyageController extends Controller
     }
 
     public function deleteEtape(Request $request) {
+        // il faudrait vérifier l'auth, les droits, et la présence du voyage en BDD
         $etape = Etape::find($request->etapeId);
         $etape->delete();
         $voyages = Voyage::all();
