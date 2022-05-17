@@ -20,6 +20,7 @@ class EtapeSeeder extends Seeder
             // voyage 1
             [
                 "voyage_id"=>1,
+                "order"=>4,
                 "type"=> "plane",
                 "transport_number"=> "SK22",
                 "departure"=> "Stockholm",
@@ -32,18 +33,7 @@ class EtapeSeeder extends Seeder
             ],
             [
                 "voyage_id"=>1,
-                "type"=> "plane",
-                "transport_number"=> "SK22",
-                "departure"=> "Stockholm",
-                "arrival"=> "New York JFK",
-                "seat"=> "7B",
-                "gate"=> "22",
-                "baggage_drop"=> null,
-                "departure_date"=> null,
-                "arrival_date"=> null,
-            ],
-            [
-                "voyage_id"=>1,
+                "order"=>2,
                 "type"=> "bus",
                 "transport_number"=> "airport",
                 "departure"=> "Barcelona",
@@ -56,6 +46,7 @@ class EtapeSeeder extends Seeder
             ],
             [
                 "voyage_id"=>1,
+                "order"=>3,
                 "type"=> "plane",
                 "transport_number"=> "SK455",
                 "departure"=> "Gerona Airport",
@@ -68,6 +59,7 @@ class EtapeSeeder extends Seeder
             ],
             [
                 "voyage_id"=>1,
+                "order"=>1,
                 "type"=> "train",
                 "transport_number"=> "78A",
                 "departure"=> "Madrid",
@@ -80,12 +72,12 @@ class EtapeSeeder extends Seeder
             ],
 
             // voyage 2
-            ["voyage_id"=>2, "type"=> "bus", "transport_number"=> "B1", "departure"=> "Grasse", "arrival"=> "Cannes", "seat"=> null, "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
-            ["voyage_id"=>2, "type"=> "train", "transport_number"=> "TER-A", "departure"=> "Cannes", "arrival"=> "Nice Riquier", "seat"=> null, "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
-            ["voyage_id"=>2, "type"=> "bus", "transport_number"=> "B2", "departure"=> "Nice Riquier", "arrival"=> "Nice", "seat"=> null, "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
-            ["voyage_id"=>2, "type"=> "plane", "transport_number"=> "P455", "departure"=> "Nice", "arrival"=> "Paris", "seat"=> "3A", "gate"=> "45B", "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
-            ["voyage_id"=>2, "type"=> "plane", "transport_number"=> "P42", "departure"=> "Paris", "arrival"=> "Londre", "seat"=> "96B", "gate"=> "12", "baggage_drop"=> "123", "departure_date"=> null, "arrival_date"=> null],
-            ["voyage_id"=>2, "type"=> "train", "transport_number"=> "T9 3/4", "departure"=> "Londre", "arrival"=> "Hogwarts Castle", "seat"=> "6", "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
+            ["voyage_id"=>2,"order"=>1, "type"=> "bus", "transport_number"=> "B1", "departure"=> "Grasse", "arrival"=> "Cannes", "seat"=> null, "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
+            ["voyage_id"=>2,"order"=>2, "type"=> "train", "transport_number"=> "TER-A", "departure"=> "Cannes", "arrival"=> "Nice Riquier", "seat"=> null, "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
+            ["voyage_id"=>2,"order"=>3, "type"=> "bus", "transport_number"=> "B2", "departure"=> "Nice Riquier", "arrival"=> "Nice", "seat"=> null, "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
+            ["voyage_id"=>2,"order"=>4, "type"=> "plane", "transport_number"=> "P455", "departure"=> "Nice", "arrival"=> "Paris", "seat"=> "3A", "gate"=> "45B", "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
+            ["voyage_id"=>2,"order"=>5, "type"=> "plane", "transport_number"=> "P42", "departure"=> "Paris", "arrival"=> "Londre", "seat"=> "96B", "gate"=> "12", "baggage_drop"=> "123", "departure_date"=> null, "arrival_date"=> null],
+            ["voyage_id"=>2,"order"=>6, "type"=> "train", "transport_number"=> "T9 3/4", "departure"=> "Londre", "arrival"=> "Hogwarts Castle", "seat"=> "6", "gate"=> null, "baggage_drop"=> null, "departure_date"=> null, "arrival_date"=> null],
             
 
         ]);

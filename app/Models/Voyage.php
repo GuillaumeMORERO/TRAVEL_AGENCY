@@ -14,7 +14,16 @@ class Voyage extends Model
         'departure_date', 'arrival_date'
     ];
 
+    protected $casts = [
+        'departure_date' => 'datetime:d/m/Y',
+        'arrival_date' => 'datetime:d/m/Y',
+    ];
+    public function serializeDate($date)
+    {
+        return $date->format('d/m/Y');
+    }
+
     public function etapes() {
-        return $this->hasMany(Etape::class);
+        return $this->hasMany(Etape::class)->orderBy('order', 'asc');
     }
 }

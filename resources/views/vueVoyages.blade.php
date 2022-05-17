@@ -17,24 +17,39 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), black), url('{{ asset('/images/bg_vacances.jpg')}}');
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center;
             }
         </style>
+
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     </head>
 
     <body class="antialiased">
         <div class="container">
 
-            <div class="text-center">
-        
+            <div class="text-center text-danger mt-2 mb-4 bg-info bg-gradient rounded">
                 <h1>Travel Agency</h1>
                 <small>désolé pour le layout</small>
             </div>
 
-            @foreach ($voyages as $key => $voyage)
-                <p>{{$voyage->departure_date}}</p>
-            @endforeach
+            @include('includes.scheduled')
+
+            @include('includes.scheduler')
         
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script>
+            // var schedulerForm = document.forms["scheduler"];
+            // if (schedulerForm.value == null || schedulerForm.value == "") {
+            //     // alert("Please enter> the username. Can’t be blank or empty !!!");
+            //     // return false;
+            // }
+        </script>
     </body>
 
 </html>

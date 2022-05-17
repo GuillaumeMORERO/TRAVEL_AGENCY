@@ -17,6 +17,7 @@ class CreateEtapesTable extends Migration
             $table->id();
             
             $table->integer('voyage_id');
+            $table->integer('order');
             $table->string('type');
             $table->string('transport_number');
             $table->string('departure');

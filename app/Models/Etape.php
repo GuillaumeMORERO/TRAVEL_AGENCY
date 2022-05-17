@@ -11,7 +11,7 @@ class Etape extends Model
     protected $table = 'etapes';
 
     protected $fillable = [
-        'voyage_id','type','transport_number','departure','arrival','seat','gate','baggage_drop','departure_date','arrival_date'
+        'voyage_id','type','transport_number','departure','arrival','seat','gate','baggage_drop','departure_date','arrival_date', 'order'
     ];
 
     public function voyage() {
